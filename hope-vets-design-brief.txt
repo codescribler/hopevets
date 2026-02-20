@@ -1,0 +1,136 @@
+Hope Vets — Homepage Content
+
+NAVIGATION
+Logo | Home | The Practice | Clinic Tour | Meet the Team | Useful Pet Info | News | Contact
+[sticky header CTA button] Book an Appointment — 01442 833 198
+
+SECTION 1 — HERO
+Headline:
+Your pet deserves a vet who knows their name.
+Subheadline:
+Hope Vets is an independent, family-run practice in Bovingdon — where your pet gets expert care from a small, dedicated team who'll get to know them (and you) for life.
+Primary CTA button: Book an Appointment
+Secondary CTA link: Meet the Team →
+Supporting trust line beneath the buttons:
+RCVS Accredited Practice · Serving Bovingdon, Hemel Hempstead, Berkhamsted & surrounding villages
+
+SECTION 2 — THE PROBLEM (What pet owners worry about)
+Section heading:
+Choosing a vet shouldn't feel like a gamble.
+Body copy:
+Finding the right vet for your pet is one of the most important decisions you'll make as a pet owner. And with so many practices now owned by large corporate groups, it can be hard to know whether you're getting genuinely personal care — or just being processed through a system.
+You want a vet who will actually remember your pet. Someone who takes the time to explain what's happening, gives you honest advice, and is there for you when things get scary. That's not too much to ask. It's exactly what Hope Vets was built to provide.
+
+SECTION 3 — THE GUIDE (Why Hope Vets)
+Section heading:
+A practice built around you — not the other way round.
+Body copy:
+Hope Vets was founded by Stephanie, a Cambridge-trained vet with a GP Certificate in Small Animal Medicine, and her husband Steven. They didn't just open a practice — they designed and built one from scratch in the Hertfordshire countryside, because they wanted it done right.
+From day one, the goal was simple: to be the kind of vet practice they'd want for their own animals. A place where the team is small enough to know every patient by name. Where you never have to repeat yourself because the same familiar faces are always there. Where the quality of care is backed by RCVS accreditation, achieved within just six months of opening.
+Over the years, Hope Vets has become part of the fabric of this community — trusted by families across Bovingdon, Flaunden, Chipperfield, Berkhamsted and Hemel Hempstead to care for their most beloved companions.
+Authority markers (displayed as visual badges or a simple row):
+
+RCVS Accredited Practice
+Independent & Family Owned
+Purpose-Built Clinic
+Serving the Community Since 2003
+
+
+SECTION 4 — THE PLAN (How it works / Services)
+Section heading:
+Everything your pet needs, under one roof.
+Intro line:
+From routine check-ups to specialist treatment, our purpose-built clinic is fully equipped to care for your pet at every stage of life.
+Service cards (each with a short description):
+Consultations
+Whether it's a routine health check or something that's been worrying you, our vets take the time to listen, examine and advise — with specialist clinics for puppies, kittens, new pets and senior animals.
+Surgery
+Our dedicated operating theatre is fully equipped and staffed by experienced, qualified nurses monitoring your pet's safety every step of the way.
+Diagnostics
+On-site X-ray, ultrasound and an in-house laboratory mean we can often give you answers the same day — without the wait.
+Dentistry
+From descaling to extractions, we have a full dental suite on site. Because a healthy mouth means a healthier, happier pet.
+Physiotherapy
+We offer physiotherapy for post-operative recovery and ongoing conditions like arthritis, with referral to specialist physiotherapists where needed.
+Hospitalisation
+Our separate dog and cat wards are calm, comfortable and staffed by people who genuinely care. Out-of-hours emergencies are covered by Vets Now, just 10 minutes away in Hemel Hempstead.
+Supplies & Prescriptions
+We stock a full range of medications, foods and treatments — and we're transparent about pricing. Long-term medications are kept as affordable as possible.
+CTA beneath services:
+Not sure what you need? Just give us a call — 01442 833 198
+
+SECTION 5 — OPENING HOURS & EMERGENCY INFO
+Section heading:
+When you need us, we're here.
+Hours block:
+Monday – Friday: 8:30am – 7:00pm
+Saturday: 8:30am – 12:00pm
+Phone (large, prominent): 01442 833 198
+Emergency copy:
+If your pet needs urgent help outside of our opening hours, call our main number and the recorded message will connect you straight to our out-of-hours service. We partner with Vets Now — a dedicated 24/7 emergency practice staffed by specialist vets and nurses, just 10 minutes away in Hemel Hempstead.
+Need advice before you travel? You can also access 24/7 video vet consultations through PawSquad, from £24.
+
+SECTION 6 — MEET THE TEAM (preview)
+Section heading:
+The same friendly faces, every time.
+Intro copy:
+One of the things our clients value most is consistency. At Hope Vets, you'll build a real relationship with our team — and we'll build one with your pet. No call centres, no rotating locums, no starting from scratch every visit.
+[Display team photo grid — link to full team page]
+CTA link: Get to know the team →
+
+SECTION 7 — CLINIC TOUR (preview)
+Section heading:
+Come and see where the magic happens.
+Copy:
+We designed and built Hope Vets from the ground up — and we're pretty proud of it. Take a peek inside our purpose-built clinic, from the consultation rooms and operating theatre to the dog and cat wards and outdoor exercise space.
+CTA link: Take the clinic tour →
+
+SECTION 8 — SOCIAL PROOF / TRUST SECTION
+Note: The current site has no testimonials. This section is written as a placeholder — the client should be asked to supply 3–5 Google reviews or client quotes. The structure below shows what should go here.
+Section heading:
+What our clients say.
+[3 review cards — to be populated with real client testimonials]
+Example placeholder card:
+"We've been bringing our dogs to Hope Vets since they opened and we wouldn't go anywhere else. Stephanie and the team genuinely care — you can feel it the moment you walk through the door."
+— Sarah M., Bovingdon
+Supporting line:
+Find us on Google · Read more reviews
+
+SECTION 9 — USEFUL PET INFO (Resource preview)
+Section heading:
+Helpful advice, whenever you need it.
+Copy:
+We believe that an informed pet owner is the best thing for any animal. Our resource library covers everything from bringing home a new puppy to understanding what's in your cat's food — written by our vets, in plain English.
+Content category links:
+
+Caring for Dogs →
+Caring for Cats →
+Small Pets →
+General Pet Health →
+
+
+SECTION 10 — FINAL CTA
+Heading:
+Ready to give your pet the care they deserve?
+Copy:
+Whether you're looking for a new vet for the first time, or you've been with us for years and want to make an appointment — we'd love to hear from you.
+Primary CTA button: Book an Appointment
+Secondary CTA: Call us — 01442 833 198
+Address line: Hope Vets, Shantock Hall Lane, Bovingdon, HP3 0NQ · info@hopevets.com
+
+FOOTER
+Col 1 — Contact
+Hope Vets
+Shantock Hall Lane
+Bovingdon, HP3 0NQ
+01442 833 198
+info@hopevets.com
+Col 2 — Opening Hours
+Mon–Fri: 8:30am – 7:00pm
+Saturday: 8:30am – 12:00pm
+Out of hours: Vets Now 01442 768 484
+Col 3 — Quick Links
+The Practice | Clinic Tour | Meet the Team | Useful Pet Info | News | Price Guide | Contact
+Col 4 — Emergency
+For out-of-hours emergencies call our main number for the on-call redirect, or contact Vets Now directly.
+Bottom bar: © 2026 Hope Vets · Terms & Conditions · Privacy & Cookie Policy

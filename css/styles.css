@@ -1,0 +1,241 @@
+/* ==========================================
+   Hope Vets — Custom Styles
+   ========================================== */
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FFF9F0; }
+::-webkit-scrollbar-thumb { background: #D4A853; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #8B2332; }
+
+/* ---- Hero ---- */
+.hero-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .hero-parallax { background-attachment: scroll; }
+}
+
+.hero-text-shadow {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Paw-print decorations (small) ---- */
+.paw-print {
+    width: 24px;
+    height: 24px;
+    opacity: 0.08;
+}
+
+/* ---- Large background paw stamp ---- */
+.paw-stamp {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(1.4) rotate(-15deg);
+    transition: none;
+}
+.paw-stamp svg {
+    width: 100%;
+    height: 100%;
+}
+/* Animate in when the section scrolls into view */
+.paw-stamp.stamped {
+    animation: pawStamp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes pawStamp {
+    0%   { opacity: 0;    transform: scale(1.4) rotate(-15deg); }
+    40%  { opacity: 0.07; transform: scale(0.95) rotate(-8deg); }
+    60%  { opacity: 0.05; transform: scale(1.03) rotate(-10deg); }
+    100% { opacity: 0.04; transform: scale(1) rotate(-8deg); }
+}
+
+/* ---- Service card hover lift ---- */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(139, 35, 50, 0.12);
+}
+
+/* ---- Badge shimmer ---- */
+.badge-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.badge-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+    0%   { left: -100%; }
+    50%  { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* ---- Phone-ring wiggle ---- */
+.phone-ring {
+    animation: phoneRing 4s ease-in-out infinite;
+}
+@keyframes phoneRing {
+    0%, 90%, 100% { transform: rotate(0deg); }
+    92%  { transform: rotate(12deg); }
+    94%  { transform: rotate(-12deg); }
+    96%  { transform: rotate(8deg); }
+    98%  { transform: rotate(-6deg); }
+}
+
+/* ---- Sections ---- */
+section { position: relative; }
+
+/* ---- Wave divider ---- */
+.wave-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wave-divider svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+/* ---- Testimonial cards ---- */
+.testimonial-card {
+    position: relative;
+}
+.testimonial-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: #D4A853;
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    line-height: 1;
+}
+
+/* ---- Sticky nav ---- */
+.nav-scrolled {
+    background: rgba(255, 249, 240, 0.97) !important;
+    box-shadow: 0 4px 20px rgba(45, 45, 45, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+/* Nav links: light when over hero, dark once scrolled */
+.nav-link {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+#navbar:not(.nav-scrolled) .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+#navbar:not(.nav-scrolled) .nav-link:hover {
+    color: #E8C97A;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* Hamburger icon also white over hero */
+#navbar:not(.nav-scrolled) #menu-icon {
+    color: #fff;
+}
+/* Once scrolled: dark links */
+#navbar.nav-scrolled .nav-link {
+    color: rgba(45, 45, 45, 0.8);
+}
+#navbar.nav-scrolled .nav-link:hover {
+    color: #8B2332;
+    background-color: rgba(139, 35, 50, 0.05);
+}
+/* Active section highlight (applied by JS) */
+.nav-link.nav-active {
+    font-weight: 700;
+}
+#navbar:not(.nav-scrolled) .nav-link.nav-active {
+    color: #E8C97A;
+}
+#navbar.nav-scrolled .nav-link.nav-active {
+    color: #8B2332;
+}
+
+/* ---- Mobile menu ---- */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+.mobile-menu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* ---- Gradient text ---- */
+.gradient-text {
+    background: linear-gradient(135deg, #8B2332, #D4A853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---- Hours table striping ---- */
+.hours-row:nth-child(even) {
+    background: rgba(212, 168, 83, 0.06);
+}
+
+/* ---- Focus styles ---- */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #D4A853;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ---- Team member photos ---- */
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.team-photo-stephanie {
+    /* She's on the left of a wide landscape shot — crop to upper-left */
+    object-position: 20% 15%;
+}
+.team-photo-steven {
+    /* He's centre-left in a wide outdoor shot — crop to upper-centre-left */
+    object-position: 35% 12%;
+}
+
+/* ---- Counter animation ---- */
+.counter-value {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .hero-parallax { background-attachment: scroll; }
+}

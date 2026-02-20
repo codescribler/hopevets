@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Vets — Independent Veterinary Practice in Bovingdon, Hertfordshire</title>
+    <meta name="description" content="Hope Vets is an independent, family-run veterinary practice in Bovingdon. RCVS accredited, purpose-built clinic offering expert care from a small, dedicated team.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#8B2332',
+                            'red-dark': '#6B1A26',
+                            'red-light': '#A83344',
+                            gold: '#D4A853',
+                            'gold-light': '#E8C97A',
+                            'gold-pale': '#F5E6C8',
+                            cream: '#FFF9F0',
+                            'warm-white': '#FEFCF8',
+                            charcoal: '#2D2D2D',
+                            'charcoal-light': '#4A4A4A',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'Georgia', 'serif'],
+                        body: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 2s infinite',
+                        'paw-walk': 'pawWalk 0.6s ease forwards',
+                        'fade-up': 'fadeUp 0.8s ease forwards',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pawWalk: {
+                            '0%': { opacity: '0', transform: 'scale(0.5) rotate(-20deg)' },
+                            '50%': { opacity: '1', transform: 'scale(1.1) rotate(0deg)' },
+                            '100%': { opacity: '0.3', transform: 'scale(1) rotate(0deg)' },
+                        },
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-brand-warm-white font-body text-brand-charcoal antialiased">
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 cursor-pointer group" aria-label="Hope Vets home">
+                    <img src="images/logo2.png" alt="Hope Vets logo" class="h-14 w-auto transition-transform duration-200 group-hover:scale-105">
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#practice" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">The Practice</a>
+                    <a href="#tour" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">Clinic Tour</a>
+                    <a href="#team" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">Meet the Team</a>
+                    <a href="#services" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">Services</a>
+                    <a href="#info" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">Pet Info</a>
+                    <a href="#reviews" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">Reviews</a>
+                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer rounded-lg">Contact</a>
+                </div>
+
+                <!-- CTA Button + Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:01442833198" class="hidden sm:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer shadow-lg shadow-brand-red/20 hover:shadow-brand-red/30 hover:scale-[1.02]">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        <span>01442 833 198</span>
+                    </a>
+                    <!-- Mobile hamburger -->
+                    <button id="mobile-toggle" class="lg:hidden p-2 rounded-lg hover:bg-brand-red/10 transition-colors duration-200 cursor-pointer" aria-label="Toggle menu" aria-expanded="false">
+                        <i data-lucide="menu" class="w-6 h-6 text-brand-charcoal" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu lg:hidden pb-4">
+                <div class="flex flex-col gap-1 bg-white/90 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-brand-gold/10">
+                    <a href="#practice" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">The Practice</a>
+                    <a href="#tour" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">Clinic Tour</a>
+                    <a href="#team" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">Meet the Team</a>
+                    <a href="#services" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">Services</a>
+                    <a href="#info" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">Pet Info</a>
+                    <a href="#reviews" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">Reviews</a>
+                    <a href="#contact" class="mobile-link px-4 py-3 text-base font-medium text-brand-charcoal hover:bg-brand-red/5 hover:text-brand-red rounded-xl transition-colors duration-200 cursor-pointer">Contact</a>
+                    <hr class="my-2 border-brand-gold/10">
+                    <a href="tel:01442833198" class="flex items-center justify-center gap-2 bg-brand-red text-white px-4 py-3 rounded-xl text-base font-semibold cursor-pointer">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Book: 01442 833 198
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ==================== SECTION 1: HERO ==================== -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 hero-parallax" style="background-image: url('images/hopevets-hero- image-muddy-lab-on-walk.png');">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/80 via-brand-charcoal/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-transparent to-brand-charcoal/20"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+            <div class="max-w-2xl">
+                <!-- Playful intro tag -->
+                <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white/90 px-4 py-2 rounded-full text-sm font-medium mb-8 border border-white/10" data-aos="fade-right" data-aos-delay="200">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    RCVS Accredited Practice
+                </div>
+
+                <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 hero-text-shadow" data-aos="fade-up" data-aos-delay="300">
+                    Your pet deserves a vet who knows their <span class="text-brand-gold-light italic">name.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-white/85 leading-relaxed mb-10 max-w-xl" data-aos="fade-up" data-aos-delay="450">
+                    Hope Vets is an independent, family-run practice in Bovingdon&nbsp;&mdash; where your pet gets expert care from a small, dedicated team who'll get to know them (and you) for life.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-10" data-aos="fade-up" data-aos-delay="600">
+                    <a href="tel:01442833198" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 cursor-pointer shadow-xl shadow-brand-red/30 hover:shadow-brand-red/40 hover:scale-[1.03]">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        Book an Appointment
+                    </a>
+                    <a href="#team" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40">
+                        Meet the Team
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Trust Line -->
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-white/60 text-sm" data-aos="fade-up" data-aos-delay="750">
+                    <span class="flex items-center gap-1.5">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-brand-gold"></i>
+                        RCVS Accredited
+                    </span>
+                    <span class="hidden sm:inline text-white/30">&middot;</span>
+                    <span>Serving Bovingdon, Hemel Hempstead, Berkhamsted &amp; surrounding villages</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/50" data-aos="fade-up" data-aos-delay="1000">
+            <span class="text-xs font-medium tracking-widest uppercase">Scroll</span>
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+                <div class="w-1.5 h-1.5 bg-white/60 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+
+        <!-- Decorative wave -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#FEFCF8">
+                <path d="M0,32L60,28C120,24,240,16,360,18.7C480,21,600,35,720,37.3C840,40,960,32,1080,26.7C1200,21,1320,19,1380,17.3L1440,16L1440,60L1380,60C1320,60,1200,60,1080,60C960,60,840,60,720,60C600,60,480,60,360,60C240,60,120,60,60,60L0,60Z"></path>
+            </svg>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 2: THE PROBLEM ==================== -->
+    <section class="py-20 sm:py-28 bg-brand-warm-white relative overflow-hidden">
+        <!-- Decorative paw prints -->
+        <div class="absolute top-16 right-12 opacity-[0.04] rotate-12 hidden lg:block">
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="#8B2332"><ellipse cx="50" cy="65" rx="22" ry="28"/><ellipse cx="25" cy="30" rx="12" ry="16" transform="rotate(-20 25 30)"/><ellipse cx="75" cy="30" rx="12" ry="16" transform="rotate(20 75 30)"/><ellipse cx="15" cy="55" rx="10" ry="14" transform="rotate(-30 15 55)"/><ellipse cx="85" cy="55" rx="10" ry="14" transform="rotate(30 85 55)"/></svg>
+        </div>
+        <div class="absolute bottom-20 left-8 opacity-[0.03] -rotate-12 hidden lg:block">
+            <svg width="60" height="60" viewBox="0 0 100 100" fill="#D4A853"><ellipse cx="50" cy="65" rx="22" ry="28"/><ellipse cx="25" cy="30" rx="12" ry="16" transform="rotate(-20 25 30)"/><ellipse cx="75" cy="30" rx="12" ry="16" transform="rotate(20 75 30)"/><ellipse cx="15" cy="55" rx="10" ry="14" transform="rotate(-30 15 55)"/><ellipse cx="85" cy="55" rx="10" ry="14" transform="rotate(30 85 55)"/></svg>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-8 leading-tight" data-aos="fade-up">
+                Choosing a vet shouldn't feel like a <span class="gradient-text">gamble.</span>
+            </h2>
+            <div class="space-y-6 text-lg text-brand-charcoal-light leading-relaxed" data-aos="fade-up" data-aos-delay="150">
+                <p>
+                    Finding the right vet for your pet is one of the most important decisions you'll make as a pet owner. And with so many practices now owned by large corporate groups, it can be hard to know whether you're getting genuinely personal care&nbsp;&mdash; or just being processed through a system.
+                </p>
+                <p>
+                    You want a vet who will actually remember your pet. Someone who takes the time to explain what's happening, gives you honest advice, and is there for you when things get scary. That's not too much to ask. It's exactly what Hope Vets was built to provide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 3: THE GUIDE (Why Hope Vets) ==================== -->
+    <section id="practice" class="py-20 sm:py-28 bg-brand-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text content -->
+                <div>
+                    <span class="inline-block text-brand-red text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-right">About the Practice</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-8 leading-tight" data-aos="fade-right" data-aos-delay="100">
+                        A practice built around <span class="italic text-brand-red">you</span>&nbsp;&mdash; not the other way round.
+                    </h2>
+                    <div class="space-y-5 text-lg text-brand-charcoal-light leading-relaxed" data-aos="fade-right" data-aos-delay="200">
+                        <p>
+                            Hope Vets was founded by <strong class="text-brand-charcoal">Stephanie</strong>, a Cambridge-trained vet with a GP Certificate in Small Animal Medicine, and her husband <strong class="text-brand-charcoal">Steven</strong>. They didn't just open a practice&nbsp;&mdash; they designed and built one from scratch in the Hertfordshire countryside, because they wanted it done right.
+                        </p>
+                        <p>
+                            From day one, the goal was simple: to be the kind of vet practice they'd want for their own animals. A place where the team is small enough to know every patient by name. Where you never have to repeat yourself because the same familiar faces are always there.
+                        </p>
+                        <p>
+                            Over the years, Hope Vets has become part of the fabric of this community&nbsp;&mdash; trusted by families across Bovingdon, Flaunden, Chipperfield, Berkhamsted and Hemel Hempstead.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Authority badges -->
+                <div class="grid grid-cols-2 gap-5" data-aos="fade-left" data-aos-delay="300">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-brand-gold/10 badge-shimmer">
+                        <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-brand-red"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">RCVS Accredited</h3>
+                        <p class="text-sm text-brand-charcoal-light leading-relaxed">Achieved within just 6 months of opening&nbsp;&mdash; a mark of quality and commitment.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-brand-gold/10 badge-shimmer">
+                        <div class="w-12 h-12 bg-brand-gold/15 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="heart-handshake" class="w-6 h-6 text-brand-gold"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Family Owned</h3>
+                        <p class="text-sm text-brand-charcoal-light leading-relaxed">Independent and proud of it. No corporate owners, just people who care.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-brand-gold/10 badge-shimmer">
+                        <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="building-2" class="w-6 h-6 text-brand-red"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Purpose-Built</h3>
+                        <p class="text-sm text-brand-charcoal-light leading-relaxed">Designed from the ground up to be the best possible environment for pets and people.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-brand-gold/10 badge-shimmer">
+                        <div class="w-12 h-12 bg-brand-gold/15 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="calendar-heart" class="w-6 h-6 text-brand-gold"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Since 2003</h3>
+                        <p class="text-sm text-brand-charcoal-light leading-relaxed">Over two decades of wagging tails, grateful purrs, and the occasional muddy paw print.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 4: SERVICES ==================== -->
+    <section id="services" class="py-20 sm:py-28 bg-brand-warm-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block text-brand-red text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-up">Our Services</span>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                    Everything your pet needs, under <span class="italic text-brand-red">one roof.</span>
+                </h2>
+                <p class="text-lg text-brand-charcoal-light leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                    From routine check-ups to specialist treatment, our purpose-built clinic is fully equipped to care for your pet at every stage of life.
+                </p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Consultations -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="stethoscope" class="w-6 h-6 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Consultations</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">Whether it's a routine check or something worrying, our vets take the time to listen, examine and advise&nbsp;&mdash; with specialist clinics for puppies, kittens and seniors.</p>
+                </div>
+
+                <!-- Surgery -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 bg-brand-gold/15 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="syringe" class="w-6 h-6 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Surgery</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">Our dedicated operating theatre is fully equipped and staffed by experienced, qualified nurses monitoring your pet's safety every step of the way.</p>
+                </div>
+
+                <!-- Diagnostics -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="scan-search" class="w-6 h-6 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Diagnostics</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">On-site X-ray, ultrasound and in-house lab mean we can often give you answers the same day&nbsp;&mdash; without the wait.</p>
+                </div>
+
+                <!-- Dentistry -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-12 h-12 bg-brand-gold/15 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="smile" class="w-6 h-6 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Dentistry</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">From descaling to extractions, we have a full dental suite on site. Because a healthy mouth means a healthier, happier pet.</p>
+                </div>
+
+                <!-- Physiotherapy -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="activity" class="w-6 h-6 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Physiotherapy</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">Post-operative recovery and ongoing conditions like arthritis, with referral to specialist physiotherapists where needed.</p>
+                </div>
+
+                <!-- Hospitalisation -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-12 h-12 bg-brand-gold/15 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="bed" class="w-6 h-6 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Hospitalisation</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">Separate dog and cat wards that are calm, comfortable and staffed by people who genuinely care. Out-of-hours covered by Vets Now, 10 mins away.</p>
+                </div>
+
+                <!-- Supplies -->
+                <div class="service-card bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-5">
+                        <i data-lucide="pill" class="w-6 h-6 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-charcoal mb-3">Supplies &amp; Prescriptions</h3>
+                    <p class="text-sm text-brand-charcoal-light leading-relaxed">Full range of medications, foods and treatments. We're transparent about pricing and keep long-term meds as affordable as possible.</p>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="service-card bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl p-7 text-white cursor-pointer flex flex-col justify-between" data-aos="fade-up" data-aos-delay="450">
+                    <div>
+                        <div class="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="phone" class="w-6 h-6 text-white phone-ring"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold mb-3">Not sure what you need?</h3>
+                        <p class="text-sm text-white/80 leading-relaxed mb-6">Just give us a call&nbsp;&mdash; we're always happy to help. No question is too small (or too muddy).</p>
+                    </div>
+                    <a href="tel:01442833198" class="inline-flex items-center gap-2 bg-white text-brand-red px-6 py-3 rounded-full text-sm font-bold transition-all duration-200 hover:bg-brand-gold-pale hover:scale-[1.02] cursor-pointer w-fit">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        01442 833 198
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 5: OPENING HOURS ==================== -->
+    <section id="hours" class="py-20 sm:py-28 bg-brand-charcoal text-white relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;><g fill=&quot;%23D4A853&quot; fill-opacity=&quot;1&quot;><path d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/></g></g></svg>');"></div>
+        <!-- Large paw stamp -->
+        <div class="paw-stamp bottom-[-60px] right-[-40px] lg:right-[5%]" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="rgba(212,168,83,1)"><ellipse cx="100" cy="130" rx="44" ry="56"/><ellipse cx="50" cy="60" rx="24" ry="32" transform="rotate(-20 50 60)"/><ellipse cx="150" cy="60" rx="24" ry="32" transform="rotate(20 150 60)"/><ellipse cx="30" cy="110" rx="20" ry="28" transform="rotate(-30 30 110)"/><ellipse cx="170" cy="110" rx="20" ry="28" transform="rotate(30 170 110)"/></svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Hours -->
+                <div>
+                    <span class="inline-block text-brand-gold text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-right">Opening Hours</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-8 leading-tight" data-aos="fade-right" data-aos-delay="100">
+                        When you need us, <span class="italic text-brand-gold">we're here.</span>
+                    </h2>
+
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden mb-8" data-aos="fade-right" data-aos-delay="200">
+                        <div class="hours-row flex justify-between items-center px-6 py-4 border-b border-white/5">
+                            <span class="font-medium">Monday &ndash; Friday</span>
+                            <span class="text-brand-gold font-semibold">8:30am &ndash; 7:00pm</span>
+                        </div>
+                        <div class="hours-row flex justify-between items-center px-6 py-4 border-b border-white/5">
+                            <span class="font-medium">Saturday</span>
+                            <span class="text-brand-gold font-semibold">8:30am &ndash; 12:00pm</span>
+                        </div>
+                        <div class="hours-row flex justify-between items-center px-6 py-4">
+                            <span class="font-medium text-white/60">Sunday</span>
+                            <span class="text-white/40">Closed <span class="text-xs">(even pets need a rest)</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Phone number -->
+                    <a href="tel:01442833198" class="inline-flex items-center gap-4 group cursor-pointer" data-aos="fade-right" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center shadow-lg shadow-brand-red/30 group-hover:shadow-brand-red/50 transition-all duration-200 group-hover:scale-105">
+                            <i data-lucide="phone" class="w-7 h-7 text-white phone-ring"></i>
+                        </div>
+                        <div>
+                            <span class="text-sm text-white/50 font-medium block">Call us to book</span>
+                            <span class="text-2xl sm:text-3xl font-bold text-brand-gold group-hover:text-brand-gold-light transition-colors duration-200">01442 833 198</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Emergency info -->
+                <div data-aos="fade-left" data-aos-delay="300">
+                    <div class="bg-brand-red/20 border border-brand-red/30 rounded-2xl p-8">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 bg-brand-red rounded-xl flex items-center justify-center animate-pulse-soft">
+                                <i data-lucide="alarm-clock" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold">Out-of-Hours Emergencies</h3>
+                        </div>
+                        <p class="text-white/80 leading-relaxed mb-5">
+                            If your pet needs urgent help outside opening hours, call our main number and the recorded message will connect you to our out-of-hours service. We partner with <strong class="text-white">Vets Now</strong>&nbsp;&mdash; a dedicated 24/7 emergency practice staffed by specialist vets and nurses, just 10 minutes away in Hemel Hempstead.
+                        </p>
+                        <p class="text-white/70 text-sm leading-relaxed mb-6">
+                            Need advice before you travel? You can also access 24/7 video vet consultations through <strong class="text-white">PawSquad</strong>, from &pound;24.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="tel:01442833198" class="inline-flex items-center justify-center gap-2 bg-white text-brand-red px-5 py-3 rounded-full text-sm font-bold transition-all duration-200 hover:bg-brand-gold-pale cursor-pointer">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                                Hope Vets: 01442 833 198
+                            </a>
+                            <a href="tel:01442768484" class="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:bg-white/20 border border-white/20 cursor-pointer">
+                                <i data-lucide="siren" class="w-4 h-4"></i>
+                                Vets Now: 01442 768 484
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 6: MEET THE TEAM ==================== -->
+    <section id="team" class="py-20 sm:py-28 bg-brand-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="inline-block text-brand-red text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-right">Our Team</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6 leading-tight" data-aos="fade-right" data-aos-delay="100">
+                        The same friendly faces, <span class="italic text-brand-red">every time.</span>
+                    </h2>
+                    <div class="space-y-5 text-lg text-brand-charcoal-light leading-relaxed" data-aos="fade-right" data-aos-delay="200">
+                        <p>
+                            One of the things our clients value most is consistency. At Hope Vets, you'll build a real relationship with our team&nbsp;&mdash; and we'll build one with your pet.
+                        </p>
+                        <p>
+                            No call centres, no rotating locums, no starting from scratch every visit. Just people who genuinely know and care about your animal.
+                        </p>
+                    </div>
+                    <a href="#team" class="inline-flex items-center gap-2 text-brand-red hover:text-brand-red-dark font-semibold mt-8 transition-colors duration-200 cursor-pointer group" data-aos="fade-right" data-aos-delay="300">
+                        Get to know the team
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </a>
+                </div>
+
+                <!-- Team photo grid -->
+                <div class="grid grid-cols-2 gap-5" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Stephanie -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-sm border border-brand-gold/10 aspect-[3/4]">
+                        <img src="images/stephanie-with-dogs-on-sofa.jpeg"
+                             alt="Stephanie, Veterinary Surgeon, with her border collies"
+                             class="team-photo team-photo-stephanie">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-charcoal/80 via-brand-charcoal/40 to-transparent pt-16 pb-4 px-5">
+                            <span class="font-heading text-base font-bold text-white block">Stephanie</span>
+                            <span class="text-sm text-white/70">Veterinary Surgeon</span>
+                        </div>
+                    </div>
+                    <!-- Steven -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-sm border border-brand-gold/10 aspect-[3/4]">
+                        <img src="images/steven.jpeg"
+                             alt="Steven, Practice Manager"
+                             class="team-photo team-photo-steven">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-charcoal/80 via-brand-charcoal/40 to-transparent pt-16 pb-4 px-5">
+                            <span class="font-heading text-base font-bold text-white block">Steven</span>
+                            <span class="text-sm text-white/70">Practice Manager</span>
+                        </div>
+                    </div>
+                    <!-- Fun fact row -->
+                    <div class="col-span-2 bg-gradient-to-r from-brand-gold/10 to-brand-red/10 rounded-2xl p-5 flex items-center gap-4 border border-brand-gold/10">
+                        <div class="w-10 h-10 bg-brand-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="paw-print" class="w-5 h-5 text-brand-gold"></i>
+                        </div>
+                        <p class="text-sm text-brand-charcoal-light leading-relaxed"><strong class="text-brand-charcoal">Fun fact:</strong> The team has a combined total of over 50 years of experience&nbsp;&mdash; and approximately 50,000 behind-the-ear scratches administered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 7: CLINIC TOUR ==================== -->
+    <section id="tour" class="py-20 sm:py-28 bg-brand-warm-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="inline-block text-brand-red text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-up">Clinic Tour</span>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                    Come and see where the <span class="italic text-brand-red">magic</span> happens.
+                </h2>
+                <p class="text-lg text-brand-charcoal-light leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="200">
+                    We designed and built Hope Vets from the ground up&nbsp;&mdash; and we're pretty proud of it. Take a peek inside our purpose-built clinic, from the consultation rooms and operating theatre to the dog and cat wards and outdoor exercise space.
+                </p>
+            </div>
+
+            <!-- Tour preview cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white rounded-2xl p-6 border border-brand-gold/10 text-center group cursor-pointer service-card">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-red/20 transition-colors duration-200">
+                        <i data-lucide="clipboard-list" class="w-7 h-7 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Consultation Rooms</h3>
+                    <p class="text-sm text-brand-charcoal-light">Where the listening happens (and the treat jar lives).</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-brand-gold/10 text-center group cursor-pointer service-card">
+                    <div class="w-14 h-14 bg-brand-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-gold/25 transition-colors duration-200">
+                        <i data-lucide="heart-pulse" class="w-7 h-7 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Operating Theatre</h3>
+                    <p class="text-sm text-brand-charcoal-light">Fully equipped and reassuringly spotless.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-brand-gold/10 text-center group cursor-pointer service-card">
+                    <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-red/20 transition-colors duration-200">
+                        <i data-lucide="bed-double" class="w-7 h-7 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Recovery Wards</h3>
+                    <p class="text-sm text-brand-charcoal-light">Separate dog & cat areas. Because diplomacy matters.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-brand-gold/10 text-center group cursor-pointer service-card">
+                    <div class="w-14 h-14 bg-brand-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-gold/25 transition-colors duration-200">
+                        <i data-lucide="trees" class="w-7 h-7 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Outdoor Space</h3>
+                    <p class="text-sm text-brand-charcoal-light">Fresh air and leg-stretching territory.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10" data-aos="fade-up" data-aos-delay="400">
+                <a href="#tour" class="inline-flex items-center gap-2 text-brand-red hover:text-brand-red-dark font-semibold transition-colors duration-200 cursor-pointer group">
+                    Take the full clinic tour
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 8: TESTIMONIALS ==================== -->
+    <section id="reviews" class="py-20 sm:py-28 bg-brand-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block text-brand-red text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-up">Testimonials</span>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                    What our clients <span class="italic text-brand-red">say.</span>
+                </h2>
+            </div>
+
+            <!-- Review cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white rounded-2xl p-8 shadow-sm border border-brand-gold/10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                    </div>
+                    <p class="text-brand-charcoal-light leading-relaxed mb-6 italic">
+                        "We've been bringing our dogs to Hope Vets since they opened and we wouldn't go anywhere else. Stephanie and the team genuinely care&nbsp;&mdash; you can feel it the moment you walk through the door."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-red/10 rounded-full flex items-center justify-center">
+                            <span class="font-heading font-bold text-brand-red text-sm">SM</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-brand-charcoal text-sm block">Sarah M.</span>
+                            <span class="text-xs text-brand-charcoal-light">Bovingdon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white rounded-2xl p-8 shadow-sm border border-brand-gold/10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                    </div>
+                    <p class="text-brand-charcoal-light leading-relaxed mb-6 italic">
+                        "They remembered my cat's name after just one visit. In ten years at our old corporate vet, that never happened once. It's the little things that make all the difference."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-gold/15 rounded-full flex items-center justify-center">
+                            <span class="font-heading font-bold text-brand-gold text-sm">JT</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-brand-charcoal text-sm block">James T.</span>
+                            <span class="text-xs text-brand-charcoal-light">Berkhamsted</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-white rounded-2xl p-8 shadow-sm border border-brand-gold/10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-brand-gold fill-brand-gold"></i>
+                    </div>
+                    <p class="text-brand-charcoal-light leading-relaxed mb-6 italic">
+                        "When our elderly spaniel needed emergency care on a Saturday morning, they fitted us in immediately. The compassion and expertise from the whole team was extraordinary. Truly the best."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-red/10 rounded-full flex items-center justify-center">
+                            <span class="font-heading font-bold text-brand-red text-sm">RW</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-brand-charcoal text-sm block">Rachel W.</span>
+                            <span class="text-xs text-brand-charcoal-light">Chipperfield</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-brand-charcoal-light text-sm">
+                    Find us on <a href="#" class="text-brand-red hover:text-brand-red-dark font-semibold underline decoration-brand-gold/30 hover:decoration-brand-red transition-colors duration-200 cursor-pointer">Google</a> &middot; Read more reviews
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 9: PET INFO ==================== -->
+    <section id="info" class="py-20 sm:py-28 bg-brand-warm-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block text-brand-red text-sm font-semibold tracking-widest uppercase mb-4" data-aos="fade-up">Resources</span>
+                <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                    Helpful advice, whenever <span class="italic text-brand-red">you</span> need it.
+                </h2>
+                <p class="text-lg text-brand-charcoal-light leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                    We believe that an informed pet owner is the best thing for any animal. Our resource library covers everything from bringing home a new puppy to understanding what's in your cat's food&nbsp;&mdash; written by our vets, in plain English.
+                </p>
+            </div>
+
+            <!-- Resource category cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#" class="group bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer service-card text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-brand-red/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-red/20 transition-colors duration-200">
+                        <i data-lucide="dog" class="w-8 h-8 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Caring for Dogs</h3>
+                    <p class="text-sm text-brand-charcoal-light mb-4">From walkies nutrition to when-should-I-worry guides.</p>
+                    <span class="inline-flex items-center gap-1 text-brand-red text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+                        Explore
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
+
+                <a href="#" class="group bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer service-card text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-brand-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/25 transition-colors duration-200">
+                        <i data-lucide="cat" class="w-8 h-8 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Caring for Cats</h3>
+                    <p class="text-sm text-brand-charcoal-light mb-4">Because they're complicated. We understand.</p>
+                    <span class="inline-flex items-center gap-1 text-brand-red text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+                        Explore
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
+
+                <a href="#" class="group bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer service-card text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-brand-red/10 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-red/20 transition-colors duration-200">
+                        <i data-lucide="rabbit" class="w-8 h-8 text-brand-red"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">Small Pets</h3>
+                    <p class="text-sm text-brand-charcoal-light mb-4">Rabbits, hamsters, guinea pigs&nbsp;&mdash; the pocket-sized patients.</p>
+                    <span class="inline-flex items-center gap-1 text-brand-red text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+                        Explore
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
+
+                <a href="#" class="group bg-white rounded-2xl p-7 border border-brand-gold/10 cursor-pointer service-card text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-brand-gold/15 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-brand-gold/25 transition-colors duration-200">
+                        <i data-lucide="heart-pulse" class="w-8 h-8 text-brand-gold"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-brand-charcoal mb-2">General Health</h3>
+                    <p class="text-sm text-brand-charcoal-light mb-4">The stuff every pet owner should know (but nobody tells you).</p>
+                    <span class="inline-flex items-center gap-1 text-brand-red text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+                        Explore
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 10: FINAL CTA ==================== -->
+    <section id="contact" class="py-20 sm:py-28 relative overflow-hidden">
+        <!-- Warm gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red-dark to-brand-charcoal"></div>
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,<svg width=&quot;40&quot; height=&quot;40&quot; viewBox=&quot;0 0 40 40&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><circle cx=&quot;20&quot; cy=&quot;20&quot; r=&quot;2&quot; fill=&quot;white&quot;/></svg>');"></div>
+        <!-- Large paw stamp -->
+        <div class="paw-stamp top-[-40px] left-[-30px] lg:left-[8%]" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="rgba(255,255,255,1)"><ellipse cx="100" cy="130" rx="44" ry="56"/><ellipse cx="50" cy="60" rx="24" ry="32" transform="rotate(-20 50 60)"/><ellipse cx="150" cy="60" rx="24" ry="32" transform="rotate(20 150 60)"/><ellipse cx="30" cy="110" rx="20" ry="28" transform="rotate(-30 30 110)"/><ellipse cx="170" cy="110" rx="20" ry="28" transform="rotate(30 170 110)"/></svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/80 px-4 py-2 rounded-full text-sm font-medium mb-8 border border-white/10" data-aos="fade-up">
+                <i data-lucide="paw-print" class="w-4 h-4"></i>
+                We can't wait to meet you (and your furry friend)
+            </div>
+
+            <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                Ready to give your pet the care they <span class="italic text-brand-gold-light">deserve?</span>
+            </h2>
+
+            <p class="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Whether you're looking for a new vet for the first time, or you've been with us for years and want to make an appointment&nbsp;&mdash; we'd love to hear from you.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12" data-aos="fade-up" data-aos-delay="300">
+                <a href="tel:01442833198" class="inline-flex items-center justify-center gap-2 bg-white text-brand-red px-8 py-4 rounded-full text-lg font-bold transition-all duration-200 cursor-pointer shadow-xl hover:bg-brand-gold-pale hover:scale-[1.03]">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Book an Appointment
+                </a>
+                <a href="tel:01442833198" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Call: 01442 833 198
+                </a>
+            </div>
+
+            <!-- Address -->
+            <div class="text-white/50 text-sm space-y-1" data-aos="fade-up" data-aos-delay="400">
+                <p>Hope Vets, Shantock Hall Lane, Bovingdon, HP3 0NQ</p>
+                <p>
+                    <a href="mailto:info@hopevets.com" class="text-brand-gold hover:text-brand-gold-light transition-colors duration-200 cursor-pointer">info@hopevets.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-brand-charcoal text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Contact -->
+                <div>
+                    <img src="images/logo2.png" alt="Hope Vets" class="h-14 w-auto mb-5 brightness-110">
+                    <address class="not-italic text-white/60 text-sm leading-relaxed space-y-1">
+                        <p>Shantock Hall Lane</p>
+                        <p>Bovingdon, HP3 0NQ</p>
+                        <p class="pt-2">
+                            <a href="tel:01442833198" class="text-brand-gold hover:text-brand-gold-light transition-colors duration-200 font-semibold cursor-pointer">01442 833 198</a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@hopevets.com" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">info@hopevets.com</a>
+                        </p>
+                    </address>
+                </div>
+
+                <!-- Col 2: Hours -->
+                <div>
+                    <h4 class="font-heading text-lg font-bold mb-5">Opening Hours</h4>
+                    <div class="text-sm text-white/60 space-y-2">
+                        <div class="flex justify-between">
+                            <span>Mon &ndash; Fri</span>
+                            <span class="text-white/80">8:30am &ndash; 7:00pm</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Saturday</span>
+                            <span class="text-white/80">8:30am &ndash; 12:00pm</span>
+                        </div>
+                        <hr class="border-white/10 my-3">
+                        <div>
+                            <span class="text-xs text-white/40 block mb-1">Out of hours</span>
+                            <a href="tel:01442768484" class="text-brand-gold hover:text-brand-gold-light transition-colors duration-200 cursor-pointer">Vets Now: 01442 768 484</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h4 class="font-heading text-lg font-bold mb-5">Quick Links</h4>
+                    <nav class="flex flex-col gap-2.5 text-sm">
+                        <a href="#practice" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">The Practice</a>
+                        <a href="#tour" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">Clinic Tour</a>
+                        <a href="#team" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">Meet the Team</a>
+                        <a href="#info" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">Useful Pet Info</a>
+                        <a href="#services" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">Services</a>
+                        <a href="#contact" class="text-white/60 hover:text-brand-gold transition-colors duration-200 cursor-pointer">Contact</a>
+                    </nav>
+                </div>
+
+                <!-- Col 4: Emergency -->
+                <div>
+                    <h4 class="font-heading text-lg font-bold mb-5">Emergency</h4>
+                    <p class="text-sm text-white/60 leading-relaxed mb-4">
+                        For out-of-hours emergencies, call our main number for the on-call redirect, or contact Vets Now directly.
+                    </p>
+                    <a href="tel:01442768484" class="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/30 text-white px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-red/30 transition-colors duration-200 cursor-pointer">
+                        <i data-lucide="siren" class="w-4 h-4"></i>
+                        Vets Now: 01442 768 484
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/40">
+                <p>&copy; 2026 Hope Vets. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Terms &amp; Conditions</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Privacy &amp; Cookie Policy</a>
+                </div>
+            </div>
+
+            <!-- Playful footer note -->
+            <div class="text-center mt-8">
+                <p class="text-xs text-white/20">No animals were harmed in the making of this website. One dog did get muddy, but he seemed fine with it.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-brand-red text-white rounded-full shadow-xl shadow-brand-red/30 flex items-center justify-center opacity-0 invisible translate-y-4 transition-all duration-300 cursor-pointer hover:bg-brand-red-dark hover:scale-110" aria-label="Back to top">
+        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    </button>
+
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

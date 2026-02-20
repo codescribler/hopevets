@@ -228,6 +228,11 @@ button:focus-visible {
     font-variant-numeric: tabular-nums;
 }
 
+/* ---- Sticky mobile call bar ---- */
+.safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
     *,
